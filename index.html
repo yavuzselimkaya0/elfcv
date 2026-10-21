@@ -827,11 +827,27 @@
     }
 
     async function askRemoteGeminiProxy(message) {
-      // Protokol kontrolü
-      let targetUrl = proxyWorkerUrl.trim();
-      if (!targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
-        targetUrl = 'https://' + targetUrl;
+      const targetUrl = "https://elfcv.yselimkaya18.workers.dev";
+
+      const response = await fetch(targetUrl, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify({
+          message: message,
+          history: chatHistory.slice(-4)
+        })
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Worker HTTP ${response.status}: ${errorText}`);
       }
+
+      const data = await response.json();
+      return data.reply || data.text || 'Cevap alınamadı.';
+    }
 
       const response = await fetch(targetUrl, {
         method: 'POST',
