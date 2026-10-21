@@ -696,43 +696,6 @@
       showToast('Sohbet geçmişi temizlendi');
     }
 
-    async function handleChatSubmit(e) {
-      if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-
-      const input = document.getElementById('chatInput');
-      const userText = input.value.trim();
-      if (!userText) return false;
-
-      input.value = '';
-      appendMessage('user', userText);
-
-      const typingIndicator = document.getElementById('typingIndicator');
-      if (typingIndicator) typingIndicator.classList.remove('hidden');
-      scrollChatToBottom();
-
-      try {
-        let reply = '';
-        if (proxyWorkerUrl) {
-          reply = await askRemoteGeminiProxy(userText);
-        } else {
-          reply = await generateLocalResponse(userText);
-        }
-
-        if (typingIndicator) typingIndicator.classList.add('hidden');
-        appendMessage('bot', reply);
-      } catch (err) {
-        console.warn('Worker bağlantısı başarısız, yerel motora geçildi:', err);
-        if (typingIndicator) typingIndicator.classList.add('hidden');
-        const fallbackReply = await generateLocalResponse(userText);
-        appendMessage('bot', fallbackReply);
-      }
-
-      return false;
-    }
-
     function appendMessage(sender, text) {
       const messagesContainer = document.getElementById('chatMessages');
       const wrapper = document.createElement('div');
@@ -826,13 +789,13 @@
       });
     }
 
-    async function askRemoteGeminiProxy(message) {
+async function askRemoteGeminiProxy(message) {
       const targetUrl = "https://elfcv.yselimkaya18.workers.dev";
 
       const response = await fetch(targetUrl, {
-        method: 'POST',
+        method: "POST",
         headers: { 
-          'Content-Type': 'application/json' 
+          "Content-Type": "application/json" 
         },
         body: JSON.stringify({
           message: message,
@@ -840,30 +803,40 @@
         })
       });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Worker HTTP ${response.status}: ${errorText}`);
-      }
-
       const data = await response.json();
-      return data.reply || data.text || 'Cevap alınamadı.';
+      return data.reply || data.error || "Yanıt metni bulunamadı.";
     }
 
-      const response = await fetch(targetUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: message,
-          history: chatHistory.slice(-4)
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error('Proxy HTTP hatası: ' + response.status);
+    async function handleChatSubmit(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
       }
 
-      const data = await response.json();
-      return data.reply || data.text || 'Cevap alınamadı.';
+      const input = document.getElementById('chatInput');
+      const userText = input.value.trim();
+      if (!userText) return false;
+
+      input.value = '';
+      appendMessage('user', userText);
+
+      const typingIndicator = document.getElementById('typingIndicator');
+      if (typingIndicator) typingIndicator.classList.remove('hidden');
+      scrollChatToBottom();
+
+      try {
+        // Doğrudan Worker'dan yanıt bekle
+        const reply = await askRemoteGeminiProxy(userText);
+
+        if (typingIndicator) typingIndicator.classList.add('hidden');
+        appendMessage('bot', reply);
+      } catch (err) {
+        console.error("İstek Hatası Detayı:", err);
+        if (typingIndicator) typingIndicator.classList.add('hidden');
+        appendMessage('bot', `<b>Bağlantı Hatası:</b> ${err.message}`);
+      }
+
+      return false;
     }
 
     function toggleSettingsModal(open = true) {
