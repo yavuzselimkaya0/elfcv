@@ -22,7 +22,7 @@
             titanium: {
               750: '#1e2430',
               800: '#161b26',
-              850: '#111622',
+              855: '#111622',
               900: '#0b0f19',
               950: '#070a10',
             }
@@ -48,13 +48,11 @@
     body { font-family: 'Inter', sans-serif; }
     .font-code { font-family: 'JetBrains Mono', monospace; }
     
-    /* Modern minimalist scrollbars */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #070a10; }
     ::-webkit-scrollbar-thumb { background: #1e2430; border-radius: 9999px; }
     ::-webkit-scrollbar-thumb:hover { background: #14b8a6; }
     
-    /* Chatbot typing animation */
     .chat-bubble-dot {
       animation: chatDotPulse 1.3s infinite ease-in-out both;
     }
@@ -96,7 +94,7 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <button onclick="toggleChat(true)" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-metal-500/10 hover:bg-metal-500/20 text-metal-400 border border-metal-500/30 text-xs font-medium transition-all shadow-sm">
+        <button type="button" onclick="toggleChat(true)" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-metal-500/10 hover:bg-metal-500/20 text-metal-400 border border-metal-500/30 text-xs font-medium transition-all shadow-sm">
           <i class="fa-solid fa-sparkles text-amber-400 animate-pulse"></i>
           <span>CV Asistanı</span>
         </button>
@@ -108,12 +106,12 @@
   <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-12">
 
     <!-- HERO / PROFİL KARTI -->
-    <section id="about" class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-titanium-900 via-titanium-850 to-titanium-900 border border-slate-800 p-6 sm:p-10 shadow-2xl">
+    <section id="about" class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-titanium-900 via-titanium-800 to-titanium-900 border border-slate-800 p-6 sm:p-10 shadow-2xl">
       <div class="absolute -right-24 -top-24 w-80 h-80 bg-metal-500/10 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute -left-24 -bottom-24 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
-        <!-- Profil Fotoğrafı (Drive CDN Doğrudan Bağlantısı) -->
+        <!-- Profil Fotoğrafı -->
         <div class="relative group shrink-0">
           <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border-2 border-metal-500/30 p-1.5 bg-titanium-950 shadow-2xl shadow-metal-500/10 group-hover:border-metal-400 transition-all duration-300">
             <img 
@@ -147,9 +145,6 @@
             <a href="mailto:enakgun14@gmail.com" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-titanium-800 hover:bg-slate-700/60 border border-slate-700/60 text-xs font-medium text-slate-200 transition-all">
               <i class="fa-regular fa-envelope text-metal-400"></i> enakgun14@gmail.com
             </a>
-            <a href="tel:+905458530223" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-titanium-800 hover:bg-slate-700/60 border border-slate-700/60 text-xs font-medium text-slate-200 transition-all">
-              <i class="fa-solid fa-phone text-metal-400"></i> +90 545 853 02 23
-            </a>
             <a href="https://linkedin.com/in/elif-nur-akgün/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-titanium-800 hover:bg-slate-700/60 border border-slate-700/60 text-xs font-medium text-slate-200 transition-all">
               <i class="fa-brands fa-linkedin text-sky-400"></i> LinkedIn Profil
             </a>
@@ -160,7 +155,7 @@
             <a href="https://drive.google.com/file/d/1czeuDyVfJtfsRDAiZAqRH85OvReypEko/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-metal-600 hover:bg-metal-500 text-titanium-950 font-bold text-xs sm:text-sm shadow-lg shadow-metal-600/20 transition-all">
               <i class="fa-solid fa-file-pdf"></i> Resmi CV'yi Görüntüle
             </a>
-            <button onclick="toggleChat(true, 'Bana Elif hakkında kısa bir özet geç ve güçlü yönlerini anlat.')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-titanium-800 hover:bg-titanium-750 text-slate-200 text-xs sm:text-sm font-medium border border-slate-700/80 transition-all">
+            <button type="button" onclick="toggleChat(true, 'Bana Elif hakkında kısa bir özet geç ve güçlü yönlerini anlat.')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-titanium-800 hover:bg-titanium-750 text-slate-200 text-xs sm:text-sm font-medium border border-slate-700/80 transition-all">
               <i class="fa-solid fa-comments text-amber-400"></i> Yapay Zeka ile Mülakat Yap
             </button>
           </div>
@@ -470,7 +465,7 @@
         <span>•</span>
         <a href="https://linkedin.com/in/elif-nur-akgün/" target="_blank" class="hover:text-metal-400 transition-colors">LinkedIn</a>
         <span>•</span>
-        <button onclick="toggleSettingsModal()" class="hover:text-metal-400 transition-colors inline-flex items-center gap-1">
+        <button type="button" onclick="toggleSettingsModal()" class="hover:text-metal-400 transition-colors inline-flex items-center gap-1">
           <i class="fa-solid fa-sliders"></i> LLM Ayarları
         </button>
       </div>
@@ -484,6 +479,7 @@
   <!-- Sabit Açma/Kapama Butonu -->
   <div class="fixed bottom-6 right-6 z-50">
     <button 
+      type="button"
       id="chatToggleBtn" 
       onclick="toggleChat()" 
       class="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-tr from-metal-600 to-metal-400 text-titanium-950 shadow-2xl shadow-metal-500/30 hover:scale-105 active:scale-95 transition-all focus:outline-none"
@@ -503,7 +499,7 @@
     class="fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-2rem)] sm:w-[420px] h-[550px] max-h-[80vh] z-50 rounded-3xl bg-titanium-900/95 border border-slate-700/80 shadow-2xl backdrop-blur-xl flex flex-col overflow-hidden transform translate-y-6 opacity-0 pointer-events-none transition-all duration-300"
   >
     <!-- Chatbot Başlığı -->
-    <div class="p-4 bg-titanium-850 border-b border-slate-800 flex items-center justify-between shrink-0">
+    <div class="p-4 bg-titanium-800 border-b border-slate-800 flex items-center justify-between shrink-0">
       <div class="flex items-center gap-3">
         <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-metal-600 to-metal-400 flex items-center justify-center text-titanium-950 font-bold text-xs shadow-md">
           <i class="fa-solid fa-robot"></i>
@@ -518,13 +514,13 @@
       </div>
 
       <div class="flex items-center gap-1">
-        <button onclick="toggleSettingsModal()" title="Bağlantı Ayarları" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-titanium-800 transition-colors text-xs">
+        <button type="button" onclick="toggleSettingsModal()" title="Bağlantı Ayarları" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-titanium-800 transition-colors text-xs">
           <i class="fa-solid fa-gear"></i>
         </button>
-        <button onclick="resetChat()" title="Sohbeti Temizle" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-titanium-800 transition-colors text-xs">
+        <button type="button" onclick="resetChat()" title="Sohbeti Temizle" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-titanium-800 transition-colors text-xs">
           <i class="fa-solid fa-arrows-rotate"></i>
         </button>
-        <button onclick="toggleChat(false)" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-titanium-800 transition-colors text-xs">
+        <button type="button" onclick="toggleChat(false)" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-titanium-800 transition-colors text-xs">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
@@ -532,31 +528,30 @@
 
     <!-- Hızlı Sorular (Prompt Chips) -->
     <div class="p-2.5 bg-titanium-950/60 border-b border-slate-800/80 overflow-x-auto flex gap-2 shrink-0 scrollbar-none text-[11px]">
-      <button onclick="quickPrompt('Cold spray araştırması nedir ve laboratuvarda ne yapıyorsun?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
+      <button type="button" onclick="quickPrompt('Cold spray araştırması nedir ve laboratuvarda ne yapıyorsun?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
         🔬 Cold Spray Araştırması
       </button>
-      <button onclick="quickPrompt('ÇİMTAŞ üretim stajında hangi süreçlerde çalıştın?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
+      <button type="button" onclick="quickPrompt('ÇİMTAŞ üretim stajında hangi süreçlerde çalıştın?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
         🏭 ÇİMTAŞ Stajı
       </button>
-      <button onclick="quickPrompt('MARTENSİT stajında Metal Injection Molding (MIM) ile ne yaptın?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
+      <button type="button" onclick="quickPrompt('MARTENSİT stajında Metal Injection Molding (MIM) ile ne yaptın?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
         ⚙️ MIM & Ar-Ge
       </button>
-      <button onclick="quickPrompt('Hangi CAD programlarını ve teknik araçları kullanabiliyorsun?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
+      <button type="button" onclick="quickPrompt('Hangi CAD programlarını ve teknik araçları kullanabiliyorsun?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
         💻 CAD & Yazılım
       </button>
-      <button onclick="quickPrompt('Elif ile nasıl iletişime geçebilirim?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
+      <button type="button" onclick="quickPrompt('Elif ile nasıl iletişime geçebilirim?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-titanium-800 hover:bg-titanium-750 text-slate-300 hover:text-metal-400 border border-slate-700/60 transition-colors">
         📞 İletişim
       </button>
     </div>
 
     <!-- Mesajlaşma Alanı -->
     <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3.5 text-xs">
-      <!-- Karşılama Mesajı -->
       <div class="flex gap-2.5 items-start">
         <div class="w-6 h-6 rounded-lg bg-metal-600/30 border border-metal-500/30 flex items-center justify-center text-metal-400 shrink-0 text-[10px]">
           <i class="fa-solid fa-sparkles"></i>
         </div>
-        <div class="bg-titanium-850 border border-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm">
+        <div class="bg-titanium-800 border border-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm">
           Merhaba! Ben Elif Nur Akgün'ün sanal asistanıyım. ODTÜ'deki araştırmalarım, ÇİMTAŞ veya Martensit stajlarım, malzeme laboratuvarı deneyimlerim ya da teknik yetkinliklerim hakkında dilediğinizi sorabilirsiniz.
         </div>
       </div>
@@ -567,15 +562,15 @@
       <div class="w-5 h-5 rounded-md bg-metal-600/30 flex items-center justify-center text-metal-400 text-[10px]">
         <i class="fa-solid fa-circle-notch fa-spin"></i>
       </div>
-      <div class="flex gap-1 py-1 px-2 rounded-lg bg-titanium-850 border border-slate-800">
+      <div class="flex gap-1 py-1 px-2 rounded-lg bg-titanium-800 border border-slate-800">
         <span class="w-1.5 h-1.5 rounded-full bg-metal-400 chat-bubble-dot"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-metal-400 chat-bubble-dot"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-metal-400 chat-bubble-dot"></span>
       </div>
     </div>
 
-    <!-- Giriş Formu -->
-    <form id="chatForm" onsubmit="handleChatSubmit(event)" class="p-3 bg-titanium-850 border-t border-slate-800 flex items-center gap-2 shrink-0">
+    <!-- Giriş Formu (Yenilenme kesin engellendi) -->
+    <form id="chatForm" onsubmit="handleChatSubmit(event); return false;" class="p-3 bg-titanium-800 border-t border-slate-800 flex items-center gap-2 shrink-0">
       <input 
         type="text" 
         id="chatInput" 
@@ -592,14 +587,14 @@
     </form>
   </div>
 
-  <!-- AYARLAR MODALI (Cloudflare Worker / Harici Proxy Ayarı) -->
+  <!-- AYARLAR MODALI -->
   <div id="settingsModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-titanium-900 border border-slate-700 max-w-md w-full rounded-2xl p-6 space-y-4 shadow-2xl">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
         <h3 class="text-sm font-bold text-white flex items-center gap-2">
           <i class="fa-solid fa-cloud-bolt text-metal-400"></i> AI Motoru & Cloudflare Bağlantısı
         </h3>
-        <button onclick="toggleSettingsModal(false)" class="text-slate-400 hover:text-white text-xs">
+        <button type="button" onclick="toggleSettingsModal(false)" class="text-slate-400 hover:text-white text-xs">
           <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
@@ -609,88 +604,34 @@
       </p>
 
       <div class="space-y-2">
-        <label class="text-[11px] font-mono text-slate-400 block">Cloudflare Worker / Proxy URL (Opsiyonel):</label>
+        <label class="text-[11px] font-mono text-slate-400 block">Cloudflare Worker / Proxy URL:</label>
         <input 
           type="url" 
           id="proxyUrlInput" 
-          placeholder="https://cv-gemini-worker.kullanici.workers.dev" 
+          placeholder="https://elfcv.yselimkaya18.workers.dev" 
           class="w-full bg-titanium-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-metal-500 font-mono"
         >
       </div>
 
       <div class="flex items-center justify-between pt-2">
-        <button onclick="clearProxySettings()" class="text-xs text-rose-400 hover:underline">
+        <button type="button" onclick="clearProxySettings()" class="text-xs text-rose-400 hover:underline">
           Varsayılana Dön (Lokal Motor)
         </button>
-        <button onclick="saveProxySettings()" class="px-4 py-2 rounded-xl bg-metal-600 hover:bg-metal-500 text-titanium-950 text-xs font-bold transition-all">
+        <button type="button" onclick="saveProxySettings()" class="px-4 py-2 rounded-xl bg-metal-600 hover:bg-metal-500 text-titanium-950 text-xs font-bold transition-all">
           Kaydet ve Kapat
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ============================================== -->
-  <!-- JAVASCRIPT: LOGIC, KNOWLEDGE BASE & ENGINE    -->
-  <!-- ============================================== -->
+  <!-- JAVASCRIPT MOTORU -->
   <script>
-    // 1. ELİF NUR AKGÜN TAM BİLGİ TABANI (LOKAL VE PROXY İÇİN REFERANS)
-    const ELIF_KB = {
-      name: "Elif Nur Akgün",
-      title: "Metalurji ve Malzeme Mühendisliği Öğrencisi & Lisans Araştırmacısı",
-      university: "Orta Doğu Teknik Üniversitesi (ODTÜ), 2022-2028 Lisans",
-      highSchool: "Bolu Fen Lisesi (2018-2022)",
-      email: "enakgun14@gmail.com",
-      phone: "+90 545 853 0223",
-      linkedin: "linkedin.com/in/elif-nur-akgün/",
-      research: {
-        lab: "ODTÜ Prof. Dr. Arcan Dericioğlu Laboratuvarı",
-        role: "Lisans Düzeyi Araştırma Asistanı (2026 - Halen)",
-        topic: "Soğuk Püskürtme (Cold Spray) Kaplama Teknolojisi",
-        details: "Doktora araştırmacılarının yanında literatür taraması, proses-mikroyapı-özellik ilişkisinin incelenmesi, kaplama parametrelerinin malzeme davranışına etkilerinin deneysel analizi ve farklı malzeme kombinasyonlarında soğuk püskürtme uygulayarak metalografik sonuçların değerlendirilmesi."
-      },
-      internships: [
-        {
-          company: "MARTENSİT İleri Malzeme Teknolojileri",
-          role: "Gönüllü Stajyer (Temmuz - Ağustos 2026)",
-          focus: "Metal Injection Molding (MIM) üretimi yapan start-up bünyesinde proje mühendisliği ve Ar-Ge. Süper alaşımların üretimi ve ileri toz metalurjisi teknolojileri."
-        },
-        {
-          company: "ÇİMTAŞ",
-          role: "Üretim Stajyeri (Temmuz - Ağustos 2025)",
-          focus: "Spool imalat süreçleri, boru hatları (pipeline) malzeme seçimi, kaynak operasyonları, ısıl işlem (PWHT), tahribatsız muayene (NDT) ve kalite kontrol laboratuvar testleri."
-        }
-      ],
-      teams: [
-        {
-          name: "METU MECH Nautronics (2024-2026)",
-          role: "Üretim Takımı Üyesi (Teknofest & ROBOSUB Otonom Su Altı Aracı)",
-          focus: "Sızdırmazlık, hidrodinamik akış, korozyona dayanıklılık ve malzeme seçimi, tasarım ve analiz."
-        },
-        {
-          name: "TEDxMETUAnkara (2023-2025)",
-          role: "Seremoni Ekip Üyesi",
-          focus: "Sosyal etkileşim alanları koordinasyonu, sergi yönetimi, organizasyon ve kriz yönetimi."
-        },
-        {
-          name: "ODTÜ Yapay Zeka Topluluğu (2022-2023)",
-          role: "Sosyal Medya Direktörü",
-          focus: "Teknoloji topluluğu iletişimi ve etkinlik koordinasyonu."
-        }
-      ],
-      skills: {
-        cad: ["Siemens NX (Orta Seviye)", "Fusion 360 (Orta Seviye)"],
-        coding: ["Python (Orta Seviye)", "Matlab (Başlangıç)", "Thermo-Calc (Başlangıç Seviyesi)"],
-        languages: ["İngilizce (C1 - İleri)", "Çince (A2 - Başlangıç)"],
-        sports: ["Voleybol (Geçmişte lisanslı oyuncu)", "Tenis (Son 3 yıldır aktif oynuyor)"]
-      }
-    };
-
-    // 2. CHATBOT DURUM YÖNETİMİ
     let isChatOpen = false;
     let chatHistory = [];
-    let proxyWorkerUrl = "elfcv.yselimkaya18.workers.dev";
+    
+    // Protokol eklenerek düzeltildi:
+    let proxyWorkerUrl = localStorage.getItem('elif_cv_proxy_url') || "https://elfcv.yselimkaya18.workers.dev";
 
-    // Sayfa Yüklendiğinde Ayarları Kontrol Et
     window.addEventListener('DOMContentLoaded', () => {
       updateBackendBadge();
       const input = document.getElementById('proxyUrlInput');
@@ -708,7 +649,6 @@
       }
     }
 
-    // Chatbot Aç/Kapa
     function toggleChat(forceState = null, initialQuery = null) {
       const chatWindow = document.getElementById('chatWindow');
       const chatIcon = document.getElementById('chatToggleIcon');
@@ -733,15 +673,13 @@
       }
     }
 
-    // Hızlı Soru Butonuna Tıklanınca
     function quickPrompt(text) {
       if (!isChatOpen) toggleChat(true);
       const input = document.getElementById('chatInput');
-      input.value = text;
-      document.getElementById('chatForm').dispatchEvent(new Event('submit'));
+      if (input) input.value = text;
+      handleChatSubmit(null);
     }
 
-    // Sohbeti Sıfırla
     function resetChat() {
       chatHistory = [];
       const messagesContainer = document.getElementById('chatMessages');
@@ -750,7 +688,7 @@
           <div class="w-6 h-6 rounded-lg bg-metal-600/30 border border-metal-500/30 flex items-center justify-center text-metal-400 shrink-0 text-[10px]">
             <i class="fa-solid fa-sparkles"></i>
           </div>
-          <div class="bg-titanium-850 border border-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm">
+          <div class="bg-titanium-800 border border-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm">
             Sohbet geçmişi temizlendi. Elif'in araştırmaları, stajları ve yetkinlikleri hakkında yeni bir soru sorabilirsiniz!
           </div>
         </div>
@@ -758,42 +696,43 @@
       showToast('Sohbet geçmişi temizlendi');
     }
 
-    // Mesaj Gönderim Mantığı
     async function handleChatSubmit(e) {
-      e.preventDefault();
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
       const input = document.getElementById('chatInput');
       const userText = input.value.trim();
-      if (!userText) return;
+      if (!userText) return false;
 
       input.value = '';
       appendMessage('user', userText);
 
-      // Yazıyor durumunu göster
       const typingIndicator = document.getElementById('typingIndicator');
-      typingIndicator.classList.remove('hidden');
+      if (typingIndicator) typingIndicator.classList.remove('hidden');
       scrollChatToBottom();
 
       try {
         let reply = '';
         if (proxyWorkerUrl) {
-          // Cloudflare Worker / Gemini Endpoint Kullan
           reply = await askRemoteGeminiProxy(userText);
         } else {
-          // Akıllı Lokal Yanıtlayıcı Kullan (0 ms gecikme / sıfır maliyet)
           reply = await generateLocalResponse(userText);
         }
 
-        typingIndicator.classList.add('hidden');
+        if (typingIndicator) typingIndicator.classList.add('hidden');
         appendMessage('bot', reply);
       } catch (err) {
-        typingIndicator.classList.add('hidden');
-        // Proxy hata verirse anında lokal motora düş
+        console.warn('Worker bağlantısı başarısız, yerel motora geçildi:', err);
+        if (typingIndicator) typingIndicator.classList.add('hidden');
         const fallbackReply = await generateLocalResponse(userText);
-        appendMessage('bot', `${fallbackReply} <br><br><span class="text-[10px] text-amber-400/80">(Not: Harici proxy bağlantısı kurulamadığı için dahili yerel motor kullanıldı.)</span>`);
+        appendMessage('bot', fallbackReply);
       }
+
+      return false;
     }
 
-    // Mesaj Kutusu Ekleme
     function appendMessage(sender, text) {
       const messagesContainer = document.getElementById('chatMessages');
       const wrapper = document.createElement('div');
@@ -810,7 +749,7 @@
           <div class="w-6 h-6 rounded-lg bg-metal-600/30 border border-metal-500/30 flex items-center justify-center text-metal-400 shrink-0 text-[10px]">
             <i class="fa-solid fa-sparkles"></i>
           </div>
-          <div class="bg-titanium-850 border border-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm">
+          <div class="bg-titanium-800 border border-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-sm max-w-[85%] leading-relaxed shadow-sm">
             ${text}
           </div>
         `;
@@ -823,125 +762,94 @@
 
     function scrollChatToBottom() {
       const messagesContainer = document.getElementById('chatMessages');
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      if (messagesContainer) messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
-    // 3. DOĞAL AKILLI LOKAL YANITLAYICI (NLP & KNOWLEDGE ENGINE)
     function generateLocalResponse(query) {
       return new Promise((resolve) => {
-        // Doğal hissettirmek için ufak simüle gecikme
         setTimeout(() => {
           const q = query.toLowerCase();
 
-          // 1. Cold Spray / Araştırma Asistanlığı
-          if (q.includes('cold spray') || q.includes('soğuk püskürtme') || q.includes('kaplama') || q.includes('arcan') || q.includes('laboratuvar') || q.includes('araştırma')) {
-            resolve(`<b>Cold Spray & Laboratuvar Çalışmalarım:</b><br>
-            ODTÜ Metalurji ve Malzeme Mühendisliği Bölümünde, <b>Prof. Dr. Arcan Dericioğlu'nun laboratuvarında</b> lisans araştırma asistanı olarak görev alıyorum.
-            <br><br>
-            • Soğuk püskürtme (cold spray) kaplama teknolojisinde proses-mikroyapı-özellik ilişkilerini inceliyorum.<br>
-            • Deneysel kaplama parametrelerinin malzeme davranışına ve sertliğine etkilerini analiz ediyorum.<br>
-            • Farklı malzeme kombinasyonlarına cold spray uygulayıp numunelerin metalografik kesit ve mikroyapı sonuçlarını değerlendiriyorum.`);
+          if (q.includes('not') || q.includes('ortalama') || q.includes('gpa') || q.includes('transkript')) {
+            resolve("Elif için en önemli kriter teorik ders notlarından ziyade; ODTÜ laboratuvarlarında (Cold spray), ileri teknoloji Ar-Ge merkezlerinde (MIM) ve ÇİMTAŞ sahasında edindiği bilgiyi bizzat uygulayarak mühendislik çözümü üretebilmektir.");
             return;
           }
 
-          // 2. ÇİMTAŞ Stajı
-          if (q.includes('çimtaş') || q.includes('cimtas') || q.includes('kaynak') || q.includes('spool') || q.includes('tahribatsız') || q.includes('ndt')) {
-            resolve(`<b>ÇİMTAŞ Üretim Stajı Deneyimim (Temmuz - Ağustos 2025):</b><br>
-            Çimtaş bünyesinde spool ve boru hatları (pipeline) imalat hatlarında yer aldım.<br><br>
-            • Malzeme seçimi ve hatta uygun kaynak operasyonlarını inceledim, bizzat kaynak uygulaması gerçekleştirdim.<br>
-            • Kaynak sonrası ısıl işlem (PWHT) süreçlerini yerinde gözlemledim.<br>
-            • Tahribatsız muayene (NDT) metotlarını ve kalite kontrol laboratuvar testlerini pratik olarak uyguladım.`);
+          if (q.includes('cold spray') || q.includes('soğuk püskürtme') || q.includes('kaplama') || q.includes('arcan') || q.includes('laboratuvar')) {
+            resolve(`<b>Cold Spray & Laboratuvar Çalışmaları:</b><br>
+            ODTÜ Metalurji ve Malzeme Mühendisliği Bölümünde, <b>Prof. Dr. Arcan Dericioğlu'nun laboratuvarında</b> lisans araştırma asistanı olarak görev almaktadır.<br><br>
+            • Soğuk püskürtme teknolojisinde proses-mikroyapı-özellik ilişkilerini incelemektedir.<br>
+            • Deneysel kaplama parametrelerinin malzeme davranışına ve mikrosertliğe etkilerini analiz etmektedir.<br>
+            • Numunelerin metalografik kesit ve mikroyapı sonuçlarını değerlendirmektedir.`);
             return;
           }
 
-          // 3. MARTENSİT & MIM Stajı
-          if (q.includes('martensit') || q.includes('mim') || q.includes('metal injection') || q.includes('kalıplama') || q.includes('start up') || q.includes('süper alaşım')) {
-            resolve(`<b>MARTENSİT İleri Malzeme Teknolojileri Stajım (Temmuz - Ağustos 2026):</b><br>
-            Metal Injection Molding (MIM) teknolojisi ile hassas parça üretimi yapan ileri malzeme start-up'ında gönüllü proje mühendisi ve Ar-Ge stajyeri olarak çalıştım.<br><br>
-            • Toz metalurjisi ve enjeksiyon kalıplama adımlarını yakından deneyimledim.<br>
-            • Yüksek performans gerektiren <b>süper alaşımların üretimi</b> ve havacılık/savunma sektöründeki yeri üzerine çalıştım.`);
+          if (q.includes('çimtaş') || q.includes('cimtas') || q.includes('kaynak') || q.includes('spool') || q.includes('fcaw') || q.includes('fabco') || q.includes('kobelco')) {
+            resolve(`<b>ÇİMTAŞ Saha & Ar-Ge Deneyimi:</b><br>
+            • <b>FCAW Kaynak Teli Ar-Ge Projesi:</b> KOBELCO ve FABCO özlü kaynak tellerinin 8" borularda 5G pozisyonunda PQR testlerini, -46°C Charpy darbe çentik tokluk sonuçlarını ve ana malzemeye kaynama verimini (%84 FABCO) karşılaştırarak sipariş kararına katkı sağlamıştır.<br>
+            • <b>Saha & İmalat:</b> Spool imalatında kaynak, lokal PWHT, NDT testleri ve vana çatlak kök neden analizlerinde aktif yer almıştır.`);
             return;
           }
 
-          // 4. Su Altı Aracı / METU MECH Nautronics / Teknofest / Robosub
-          if (q.includes('nautronics') || q.includes('su altı') || q.includes('su alti') || q.includes('teknofest') || q.includes('robosub') || q.includes('mech')) {
-            resolve(`<b>METU MECH Nautronics (Otonom Su Altı Aracı Takımı):</b><br>
-            Teknofest ve uluslararası ROBOSUB yarışmaları için su altı aracının üretim ve mekanik ekibinde yer aldım.<br><br>
-            • Aracın kritik isterleri olan <b>sızdırmazlık</b>, <b>hidrodinamik akış</b> ve <b>korozyon dayanımı</b> için malzeme seçimleri yaptım.<br>
-            • Tasarım ve dayanım analizlerini gerçekleştirerek mühendislik raporlamalarını tamamladım.`);
+          if (q.includes('martensit') || q.includes('mim') || q.includes('inconel') || q.includes('süper alaşım')) {
+            resolve(`<b>MARTENSİT İleri Malzeme & MIM Deneyimi:</b><br>
+            Metal Injection Molding (MIM) teknolojisi ile Inconel 718, 625 ve 713C süper alaşımlarının üretim ve mikroyapı analizlerini gerçekleştirmiştir.<br><br>
+            • Solvent ve termal debinding süreçleri,<br>
+            • 1275°C optimum vakum sinterleme ve kalıntı gözenekleri gidermek için HIP (1190°C, 110 MPa) uygulamaları,<br>
+            • Mukavemet artıran gama çift üssü (γ'') ve zararlı Laves fazı dönüşümlerini incelemiştir.`);
             return;
           }
 
-          // 5. Yetkinlikler / CAD / Yazılım / Thermo-Calc / Python
-          if (q.includes('yetenek') || q.includes('program') || q.includes('cad') || q.includes('nx') || q.includes('fusion') || q.includes('python') || q.includes('matlab') || q.includes('thermocalc') || q.includes('yazılım')) {
-            resolve(`<b>Teknik Yetkinliklerim & Kullandığım Araçlar:</b><br>
-            • <b>CAD & Modelleme:</b> Siemens NX (Orta Seviye), Autodesk Fusion 360 (Orta Seviye)<br>
-            • <b>Hesaplamalı Malzeme & Kodlama:</b> Python (Orta Seviye), Thermo-Calc (Başlangıç), MATLAB (Başlangıç)<br>
-            • <b>Malzeme & Karakterizasyon:</b> Cold Spray kaplama parametre analizi, Metalografi, NDT (Tahribatsız Muayene), Kaynak metalurjisi.`);
+          if (q.includes('su altı') || q.includes('robosub') || q.includes('teknofest') || q.includes('nautronics')) {
+            resolve(`<b>METU MECH Nautronics (Otonom Su Altı Aracı):</b><br>
+            Teknofest ve ABD Irvine, California'da düzenlenen <b>28th Annual RoboSub</b> yarışmalarında araç gövdesinin malzeme seçimi, sızdırmazlık ve korozyon dayanımı analizlerinde görev almıştır.`);
             return;
           }
 
-          // 6. Diller & Spor
-          if (q.includes('dil') || q.includes('ingilizce') || q.includes('çince') || q.includes('spor') || q.includes('voleybol') || q.includes('tenis')) {
-            resolve(`<b>Yabancı Diller & İlgi Alanlarım:</b><br>
-            • <b>İngilizce:</b> C1 İleri Düzey (Akademik literatür taraması ve raporlama yapabilecek seviyede)<br>
-            • <b>Çince:</b> A2 Temel Düzey<br>
-            • <b>Spor:</b> Geçmişte lisanslı voleybol oyuncusuydum, son 3 yıldır ise aktif olarak tenis oynuyorum.`);
+          if (q.includes('yetenek') || q.includes('cad') || q.includes('nx') || q.includes('python') || q.includes('yazılım')) {
+            resolve(`<b>Teknik Yetkinlikler:</b><br>
+            • <b>CAD & Tasarım:</b> Siemens NX (Orta), Autodesk Fusion 360 (Orta)<br>
+            • <b>Hesaplama & Kodlama:</b> Python (Orta), MATLAB (Başlangıç), Thermo-Calc (Başlangıç)<br>
+            • <b>Diller:</b> İngilizce (C1 İleri Düzey), Çince (A2)`);
             return;
           }
 
-          // 7. İletişim & CV İndirme
-          if (q.includes('iletişim') || q.includes('email') || q.includes('telefon') || q.includes('numara') || q.includes('linkedin') || q.includes('cv')) {
-            resolve(`<b>Elif Nur Akgün İletişim Bilgileri:</b><br>
+          if (q.includes('iletişim') || q.includes('mail') || q.includes('eposta') || q.includes('linkedin')) {
+            resolve(`<b>İletişim Bilgileri:</b><br>
             • <b>E-posta:</b> <a href="mailto:enakgun14@gmail.com" class="text-metal-400 underline">enakgun14@gmail.com</a><br>
-            • <b>Telefon:</b> <a href="tel:+905458530223" class="text-metal-400 underline">+90 545 853 02 23</a><br>
-            • <b>LinkedIn:</b> <a href="https://linkedin.com/in/elif-nur-akgün/" target="_blank" class="text-metal-400 underline">linkedin.com/in/elif-nur-akgün/</a><br>
-            • <b>Özgeçmiş PDF:</b> Sayfanın üstündeki butondan veya doğrudan Drive üzerinden indirebilirsiniz.`);
+            • <b>LinkedIn:</b> <a href="https://linkedin.com/in/elif-nur-akgün/" target="_blank" class="text-metal-400 underline">linkedin.com/in/elif-nur-akgün/</a>`);
             return;
           }
 
-          // 8. Eğitim
-          if (q.includes('eğitim') || q.includes('üniversite') || q.includes('odtu') || q.includes('odtü') || q.includes('lise') || q.includes('fen lisesi')) {
-            resolve(`<b>Eğitim Bilgilerim:</b><br>
-            • <b>Lisans:</b> Orta Doğu Teknik Üniversitesi (ODTÜ) — Metalurji ve Malzeme Mühendisliği (2022 - 2028)<br>
-            • <b>Lise:</b> Bolu Fen Lisesi (2018 - 2022)`);
-            return;
-          }
-
-          // 9. Genel Tanıtım / Kimsin
-          if (q.includes('kimsin') || q.includes('özet') || q.includes('hakkında') || q.includes('tanıt') || q.includes('merhaba') || q.includes('selam')) {
-            resolve(`Merhaba! Ben <b>Elif Nur Akgün</b>.<br>
-            ODTÜ Metalurji ve Malzeme Mühendisliği öğrencisiyim. Üretim süreçleri, süper alaşımlar, Metal Injection Molding (MIM) ve Soğuk Püskürtme (cold spray) kaplama teknolojileri üzerine hem Ar-Ge stajlarında hem de ODTÜ Prof. Dr. Arcan Dericioğlu'nun laboratuvarında araştırma yapıyorum.<br><br>
-            Hangi alandaki tecrübem hakkında daha fazla detay öğrenmek istersiniz?`);
-            return;
-          }
-
-          // Varsayılan Akıllı Yanıt
-          resolve(`Bu konuda CV'mde doğrudan bir detay yer almıyor olabilir ancak; <b>Cold Spray kaplama araştırmam</b>, <b>ÇİMTAŞ üretim stajım</b>, <b>MARTENSİT Ar-Ge çalışmalarım</b>, <b>Siemens NX / Python yetkinliklerim</b> veya iletişim bilgilerim hakkında seve seve bilgi verebilirim. Dilerseniz bana doğrudan <b>enakgun14@gmail.com</b> adresinden ulaşabilirsiniz.`);
-        }, 300);
+          resolve(`Merhaba! Ben Elif'in portfolyo asistanıyım. ODTÜ Cold Spray laboratuvar araştırmaları, ÇİMTAŞ FCAW kaynak teli Ar-Ge projesi, MARTENSİT Inconel mikroyapı analizleri veya RoboSub su altı aracı projeleri hakkında dilediğinizi sorabilirsiniz.`);
+        }, 250);
       });
     }
 
-    // 4. İSTEĞE BAĞLI HARİCİ PROXY (CLOUDFLARE WORKER / GEMINI ÇAĞRISI)
     async function askRemoteGeminiProxy(message) {
-      const response = await fetch(proxyWorkerUrl, {
+      // Protokol kontrolü
+      let targetUrl = proxyWorkerUrl.trim();
+      if (!targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
+        targetUrl = 'https://' + targetUrl;
+      }
+
+      const response = await fetch(targetUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: message,
-          history: chatHistory.slice(-4) // Son birkaç mesajı bağlam olarak gönder
+          history: chatHistory.slice(-4)
         })
       });
 
       if (!response.ok) {
-        throw new Error('Proxy cevabı başarısız: ' + response.status);
+        throw new Error('Proxy HTTP hatası: ' + response.status);
       }
 
       const data = await response.json();
       return data.reply || data.text || 'Cevap alınamadı.';
     }
 
-    // 5. YARDIMCI VE AYAR FONKSİYONLARI
     function toggleSettingsModal(open = true) {
       const modal = document.getElementById('settingsModal');
       if (open) {
@@ -952,11 +860,14 @@
     }
 
     function saveProxySettings() {
-      const val = document.getElementById('proxyUrlInput').value.trim();
+      let val = document.getElementById('proxyUrlInput').value.trim();
+      if (val && !val.startsWith('http://') && !val.startsWith('https://')) {
+        val = 'https://' + val;
+      }
       proxyWorkerUrl = val;
       if (val) {
         localStorage.setItem('elif_cv_proxy_url', val);
-        showToast('Cloudflare Worker URL kaydedildi');
+        showToast('Worker URL güncellendi');
       } else {
         localStorage.removeItem('elif_cv_proxy_url');
         showToast('Lokal AI moduna geçildi');
@@ -970,7 +881,7 @@
       localStorage.removeItem('elif_cv_proxy_url');
       document.getElementById('proxyUrlInput').value = '';
       updateBackendBadge();
-      showToast('Varsayılan Lokal AI aktif');
+      showToast('Lokal AI aktif');
       toggleSettingsModal(false);
     }
 
